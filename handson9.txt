@@ -1,0 +1,214 @@
+1)
+package com.handson9;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class HandsOn1 {
+	public static void main(String[] args) {
+		ArrayList<Integer> a=new ArrayList();
+		int n;
+		int sum=0;
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter no of matches");
+		n=s.nextInt();
+		for(int i=0;i<n;i++) {
+			System.out.println("enter the "+ (i+1)+" match score");
+			a.add(s.nextInt());
+		}
+		for(int i:a) {
+			sum=sum +i;
+		}
+		double avg=sum/n;
+		System.out.println(sum);
+		System.out.println(avg);
+
+	}
+
+}
+
+2)
+
+package com.handson9;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class HandsOn2 {
+
+	public static void main(String[] args) {
+		int n;
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter no of matches");
+		n=s.nextInt();
+		int a[]=new int[n];
+		for(int i=0;i<n;i++) {
+			System.out.println("enter the "+ (i+1)+" match score");
+			a[i]=s.nextInt();
+		}
+		Arrays.sort(a);
+		for(int k:a) {
+			System.out.println(k);
+		}
+		
+		
+
+	}
+
+}
+3)
+package com.handson9;
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class HandsOn3 {
+
+	public static void main(String[] args) {
+		Set<String> s=new HashSet<>();
+		String n;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter no of satdiums");
+		n=sc.nextLine();
+		for(int i=0;i<Integer.parseInt(n);i++) {
+			s.add(sc.nextLine());
+			System.out.println(i);
+		}
+		System.out.println(s);
+		System.out.println(s.size());
+	}
+}
+4)package com.handson9;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+class UserMainCode{
+	public static double caculateAverage(Map<Integer, Double> hm) {
+		System.out.println(hm.size());
+		double sum=0;
+		int k=hm.size();
+		int l=0;
+		for(int i=1;i<=k;i++)
+		{
+			if(i%2!=0) {
+			sum=sum+hm.get(i);
+			l=l+1;
+			}
+		}
+		System.out.println(l);
+		double p=sum/l;
+		return p;
+	}
+}
+
+public class HandsOn4 {
+
+	public static void main(String[] args) {
+		UserMainCode u=new UserMainCode();
+		Map<Integer,Double> hm=new HashMap<>();
+		System.out.println("enter no of ele");
+		Scanner sc=new Scanner(System.in);
+				int n;
+		n=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("enter the valus int and double");
+			hm.put(sc.nextInt(), sc.nextDouble());
+		}
+		System.out.println(hm);
+		double p=u.caculateAverage(hm);
+		System.out.printf("%.2f",p);
+
+	}
+
+}
+
+
+6)
+package com.handson9;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.TreeMap;
+class UserMainCode3{
+
+	static String maxKey(TreeMap<Integer, String> tm) {
+		String k=tm.get(tm.lastKey());
+		
+		return k;
+	}
+}
+
+
+public class HandsOn6 {
+
+	public static void main(String[] args) {
+		TreeMap<Integer,String> tm=new TreeMap<>() ;
+		UserMainCode3 u=new UserMainCode3();
+		System.out.println("enter no of ele");
+		Scanner sc=new Scanner(System.in);
+				int n;
+		n=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("enter the valus int and double");
+			tm.put(sc.nextInt(), sc.nextLine());
+		}
+	    System.out.println(u.maxKey(tm));
+
+	}
+
+}
+7)
+package com.handson9;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+class UserMainCode4{
+
+	static List<String> designation(TreeMap<String, String> tm, String d) {
+		List<String> l=new ArrayList();
+		for(Entry<String, String> p:tm.entrySet())
+		{
+			if(p.getValue().equals(d)) {
+				l.add(p.getKey());
+			}
+		}
+		return l;
+	}
+	
+}
+public class HandsOn7 {
+
+	public static void main(String[] args) {
+		TreeMap<String,String> tm=new TreeMap<>() ;
+		UserMainCode4 u=new UserMainCode4();
+		System.out.println("enter no of ele");
+		Scanner sc=new Scanner(System.in);
+				int n;
+		n=sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			System.out.println("enter the valus int and double");
+			tm.put(sc.nextLine(), sc.nextLine());
+		}
+		System.out.println("Enter Designation");
+		String d=sc.nextLine();
+		List<String>l1=u.designation(tm,d);
+		for(String str:l1) {
+			System.out.println(str);
+		}
+		
+
+	}
+
+}
+
